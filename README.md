@@ -2,31 +2,39 @@ This is ALX Software Enginering Printf Team Project
 
 This team project is a customized printf function for the C programming language called _printf. It has been optimized to take various inputs and optional arguments based exactly on how the standard library function printf works. We submitted this as part of the ALX software engineering course requirement for grading.
 
-Background
+The task involve step by step include:
 
-This function _printf() writes output to stdout, the standard output stream with the format and options without making use of any of the standard library files. It was written to use a local buffer of 1024 bytes when printing although it can print larger sets of data.
+0 - Writes a function that produces output according to a format.
 
-The _printf() function returns the total number of characters printed to the stdout(excluding the null byte at the end of strings) after a successful execution.
+1 - Handle the following conversion specifiers; d,i
 
-If an output error is encountered, a negative value of -1 is returned.
+2 - Handle the following custom conversion specifiers:
 
-The prototype of this function is: int _printf(const char format, ...);
+b: the unsigned int argument is converted to binary.
+3 - Handle the following conversion specifiers; u,o,x,y.
 
-This means that it has one mandatory format argument, and an extra number of arguments that can be none, or many.
+4 - Uses a local buffer of 1024 chars in order to call write as little as possible.
 
-Format of the format string
+5 - Handles the following custom conversion specifier;
 
-The format string is a character string starting and ending with double quotes. The format string is composed of zero or more directives; ordinary characters (not %), and conversion specifications, each of which results in fetching zero or more subsequent arguments.
+S : prints the string.
+Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters).
+6 - Handles the following conversion specifie; p.
 
-Each conversion specification is introduced by the character % and ends with a conversion specifier. In between there may be (in this order):
+7 - Handles the following flag characters for non-custom conversion specifiers; +, space, #.
 
-Zero or more flags
+8 - Handles the following length modifiers for non-custom conversion specifiers; l, h, Conversion specifiers to handle: d, i, u, o, x, X.
 
-An optional field width
+9 - Handles the field width for non-custom conversion specifiers.
 
-An optional precision modifier
+10 - Handles the precision for non-custom conversion specifiers.
 
-An optional length modifier
+11 -Handles the 0 flag character for non-custom conversion specifiers.
 
-The flag characters
+12 - Handles the - flag character for non-custom conversion specifiers.
 
+13 - Handles the following custom conversion specifier; r : prints the reversed string.
+
+14 - Handles the following custom conversion specifier; R: prints the rot13'ed string.
+
+15 - All the above options work well together.
